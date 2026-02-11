@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Payroll - Edit{% endblock %}
+
+{% block content %}
+  <h2>Edit employee</h2>
+
+  <form method="post">
+    <label>
+      Name
+      <input type="text" name="name" value="{{ name }}" required />
+    </label>
+
+    <label>
+      Salary (GBP)
+      <input type="text" name="salary" value="{{ salary }}" required />
+    </label>
+
+    <div style="margin-top: 1rem;">
+      <button class="btn" type="submit">Update</button>
+      <a class="btn" href="{{ url_for('view_employee', emp_id=employee['id']) }}">Cancel</a>
+    </div>
+  </form>
+{% endblock %}
